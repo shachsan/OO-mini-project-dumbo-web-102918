@@ -58,6 +58,6 @@ class User
   def safe_recipes
     RecipeIngredient.all.reject do |recipe_ind|
       allerges.include?(recipe_ind.ingredient)
-    end.safe.map {|ri| ri.recipe}
+    end.map {|ri| ri.recipe}
   end
 end
